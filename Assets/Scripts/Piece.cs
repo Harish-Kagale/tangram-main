@@ -38,7 +38,7 @@ public class Piece : MonoBehaviour
     {
         if (isSnapped) return;
         selectedPiece = this;
-        
+        AudioManager.Instance.PlayPopSfx();
         // Calculate offset based on current lifted position to avoid jumps
         dragOffset = transform.position - GetMouseWorldPosition(transform.position.y);
     }
@@ -72,6 +72,7 @@ public class Piece : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R) || Input.GetMouseButton(1) || isButtonRotating)
         {
+            AudioManager.Instance.PlayClickSfx();
             HandleSmoothRotation();
         }
     }
@@ -94,6 +95,7 @@ public class Piece : MonoBehaviour
             isSnapped = true;
             target.gameObject.SetActive(false);
             PuzzleManager.Instance?.CheckPuzzleComplete();
+            AudioManager.Instance.PlaySnappedSfx();
         }
     }
 

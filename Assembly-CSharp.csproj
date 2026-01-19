@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/PuzzleManager.cs" />
     <Compile Include="Assets/Scripts/RotationButtonBridge.cs" />
+    <Compile Include="Assets/Scripts/AudioManager.cs" />
     <Compile Include="Assets/Scripts/UIManager.cs" />
     <Compile Include="Assets/Scripts/Piece.cs" />
   </ItemGroup>
